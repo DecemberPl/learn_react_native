@@ -48,7 +48,7 @@ export default class LotsOfGreetings extends Component {
       <View style={{alignItems: 'center'}}>
         <App name='Rexxarr' />
         <App name='Jainaaaaa' />
-        <App name='Valeera' />
+        <App name='Valeeraaa' />
       </View>
     );
   }
