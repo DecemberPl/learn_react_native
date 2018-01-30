@@ -3,7 +3,6 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
 import React, { Component } from 'react';
 import {
   Platform,
@@ -47,8 +46,8 @@ export default class LotsOfGreetings extends Component {
   render() {
     return (
       <View style={{alignItems: 'center'}}>
-        <App name='Rexxar' />
-        <App name='Jaina' />
+        <App name='Rexxarr' />
+        <App name='Jainaaaaa' />
         <App name='Valeera' />
       </View>
     );
