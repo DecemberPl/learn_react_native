@@ -8,3 +8,5 @@ import {
     AppRegistry
   } from 'react-native';
   
+  class App_1 extends Component<{}> {
+  }
