@@ -4,12 +4,15 @@
  * @flow
  */
 import React, { Component } from 'react';
+import axios from "axios";
 import {
   Platform,
   StyleSheet,
   Text,
   View,
-  AppRegistry
+  AppRegistry,
+  Button,
+  Alert
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -49,9 +52,26 @@ export default class LotsOfGreetings extends Component {
         <App name='Rexxarr' />
         <App name='Jainaaaaa' />
         <App name='Valeera' />
+        <Button  onPress={this.onPressLearnMore.bind(this)}
+      title="Learn More"/>
       </View>
+      
     );
+
   }
+
+  onPressLearnMore(){
+ 
+    Alert.alert("Function Without Argument");
+    axios.get("http://192.168.4.151:8082/Qarah5_WebApp/api/user/termandcondition")
+    .then(res => {
+      const posts = res.data;
+      Alert.alert(posts.TermandConditions);
+      this.setState({ posts });
+    });
+    
+  }
+ 
 }
 
 const styles = StyleSheet.create({
