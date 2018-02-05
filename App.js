@@ -6,8 +6,9 @@
 import React, { Component } from 'react';
 import { NavigationActions } from "react-navigation";
 import axios from 'axios';
-import {StackNavigator} from 'react-navigation';
-//import HomeScreen from './src/navigation/screen/HomeScreen';
+import {StackNavigator,TabNavigator} from 'react-navigation';
+import HomeScreen from './src/navigation/screen/Home';
+import ChatScreen from './src/navigation/screen/ChatScreen';
 import {
   Platform,
   StyleSheet,
@@ -51,7 +52,7 @@ class App extends React.Component {
   }
 }
 
-class HomeScreen extends React.Component {
+/*class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Welcome'
   };
@@ -83,16 +84,37 @@ class ChatScreen extends React.Component {
       </View>
     );
   }
-}
+}*/
 
- const RootNavigator = StackNavigator({
-  Home: { screen: HomeScreen },
-  //LotsOfGreetings:{screen: LotsOfGreetings},
-  ChatScreen:{screen: ChatScreen}},
+ /*const RootNavigator = StackNavigator({
+  Home: { screen: TabNavigator(
+    
+        {
+          HomeScreen: { screen: HomeScreen },
+          ChatScreen: { screen: ChatScreen },
+        },
+        {
+          lazy: true,
+          tabBarPosition: "top",
+          swipeEnabled: true,
+          animationEnabled: false
+        }
+  ) },
+  ChatScreen:{screen: ChatScreen}}
+  );*/
+const RootNavigator =TabNavigator(
   {
-    initialRouteName: 'ChatScreen',
-  });
+          HomeScreen: { screen: HomeScreen },
+          ChatScreen: { screen: ChatScreen },
+        },
+        {
+          lazy: true,
+          tabBarPosition: "top",
+          swipeEnabled: true,
+          animationEnabled: false,
 
+        }
+);
 export default class LotsOfGreetings extends Component {
   constructor(props) {
   super(props);
